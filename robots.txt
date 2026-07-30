@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://#/sitemap.xml
+Sitemap: https://https://beton-zakarpattya.com.ua/sitemap.xml
