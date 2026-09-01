@@ -674,7 +674,7 @@ header .header__container .header__list .header__item .header__item-link:hover {
 .order__form .form__container .form__card {
   background: #38393e;
   border-radius: 12px;
-  padding: 40px;
+  padding: 40px 40px 12px;
   box-shadow: 0 4px 20px rgba(56, 57, 62, 0.12);
 }
 .order__form .form__container .form__card form {
@@ -775,9 +775,9 @@ header .header__container .header__list .header__item .header__item-link:hover {
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 8px;
   will-change: transform;
-  margin-bottom: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 .order__form .form__container .form__card form .form__card-submit:hover {
   background: #e6b800;
@@ -785,6 +785,8 @@ header .header__container .header__list .header__item .header__item-link:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 .order__form .form__container .form__card form .form__card-note {
+  max-width: 240px;
+  place-self: center;
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   color: #8a8a88;

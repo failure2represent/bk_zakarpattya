@@ -160,10 +160,10 @@ async function build() {
   for (const htmlFile of htmlFiles) {
     const html = fs.readFileSync(htmlFile, "utf8");
 
-  extractClassesFromHtml(html).forEach((className) => {
-    allClasses.add(className);
-  });
-}
+    extractClassesFromHtml(html).forEach((className) => {
+      allClasses.add(className);
+    });
+  }
 
   const classes = [...allClasses];
 
@@ -215,13 +215,16 @@ async function build() {
 
   copyDir("img", "dist/img");
   copyDir("files", "dist/files");
-  copyDir("js", "dist/js");
+
+  // Копируем только scripts.js, build.js НЕ копируется
+  copyFile("js/scripts.js", "dist/js/scripts.js");
 
   copyFile("robots.txt", "dist/robots.txt");
   copyFile("sitemap.xml", "dist/sitemap.xml");
 
+  // class-map.json создаётся в корне проекта, а НЕ в dist
   fs.writeFileSync(
-    path.join(DIST_DIR, "class-map.json"),
+    "class-map.json",
     JSON.stringify(classMap, null, 2),
   );
 
